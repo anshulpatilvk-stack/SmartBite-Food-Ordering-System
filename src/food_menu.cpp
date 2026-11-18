@@ -4,8 +4,8 @@
 
 using namespace std;
 
-// Array to store food items
-Food menu[8] = {
+// MEMBER 1: Array of food items
+Food menu[MENU_SIZE] = {
     {1, "Pizza", 150},
     {2, "Burger", 80},
     {3, "Pasta", 120},
@@ -16,7 +16,11 @@ Food menu[8] = {
     {8, "Cold Drink", 30}
 };
 
-// Display food menu Time:-O(n) Space:-O(1)
+// MEMBER 1: Display Food Menu
+// Concept: Array and Structure
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+
 void displayMenu() {
 
     cout << "\n========== FOOD MENU ==========\n";
@@ -25,7 +29,7 @@ void displayMenu() {
          << setw(20) << "Food Name"
          << "Price\n";
 
-    for (int i = 0; i < 8; i++) {
+    for (int i = 0; i < MENU_SIZE; i++) {
 
         cout << left << setw(10) << menu[i].id
              << setw(20) << menu[i].name
@@ -33,7 +37,11 @@ void displayMenu() {
     }
 }
 
-// Search food using Linear Search Time:-O(n) Space:-O(1)
+// MEMBER 1: Search Food
+// Concept: Linear Search
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+
 void searchFood() {
 
     int id;
@@ -42,7 +50,7 @@ void searchFood() {
     cout << "\nEnter Food ID to search: ";
     cin >> id;
 
-    for (int i = 0; i < 8; i++) {
+    for (int i = 0; i < MENU_SIZE; i++) {
 
         if (menu[i].id == id) {
 
@@ -60,12 +68,16 @@ void searchFood() {
     }
 }
 
-// Sort food using Bubble Sort Time:-O(n^2) Space:-O(1)
+// MEMBER 1: Sort Food by Price
+// Concept: Bubble Sort
+// Time Complexity: O(n^2)
+// Space Complexity: O(1)
+
 void sortFood() {
 
-    for (int i = 0; i < 7; i++) {
+    for (int i = 0; i < MENU_SIZE - 1; i++) {
 
-        for (int j = 0; j < 7 - i; j++) {
+        for (int j = 0; j < MENU_SIZE - 1 - i; j++) {
 
             if (menu[j].price > menu[j + 1].price) {
 
